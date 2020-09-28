@@ -11,7 +11,7 @@ interface ApiInterface {
     suspend fun getPosts(): Response<List<Post>> = withContext(Dispatchers.IO){
         val apiClient = ApiClient.buildService(ApiInterface::class.java)
         val response = apiClient.getPosts()
-        return@withContext response
+        response
 
     }
 }
